@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('franc',{
+        category: 'analysis',
+        color: '#AAAA66',
+        defaults: {
+            minLength: {value:"10", validate:RED.validators.number()},
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "arrow-in.png",
+        label: function() {
+            return this.name||"franc";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="franc">
+    <div class="form-row">
+        <label for="node-input-minLength"><i class="icon-tag"></i> Min Length</label>
+        <input type="text" id="node-input-minLength" placeholder="Min Length">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="franc">
+    <p>Analyses the <b>msg.payload</b> and adds a <b>msg.franc</b> object that contains the identified language <a href="https://en.wikipedia.org/wiki/ISO_639-3" target="_new">ISO 639-3</a> code as <b>msg.franc.iso639_3</b>.</p>
+    <p>See <a href="https://github.com/wooorm/franc/blob/master/Readme.md" target="_new">the Franc documentation here</a>.</p>
+</script>

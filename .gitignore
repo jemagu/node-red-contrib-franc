@@ -1,0 +1,5 @@
+franc/
+node_modules/
+.vscode/
+
+jsconfig.json
