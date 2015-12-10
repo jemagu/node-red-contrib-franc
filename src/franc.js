@@ -6,8 +6,10 @@ module.exports = function(RED) {
         RED.nodes.createNode(this, config);
         this.minLength = config.minLength;
         this.on('input', msg => {
-            let francObj = {iso639_3: franc(msg.payload, {'minLength': this.minLength})};
-            msg.franc = francObj;
+            if (typeof msg.payload === 'string') {
+                let francObj = {iso639_3: franc(msg.payload, {'minLength': this.minLength})};
+                msg.franc = francObj;
+            }
             this.send(msg);
         });
     }
