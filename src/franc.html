@@ -29,4 +29,5 @@
 <script type="text/x-red" data-help-name="franc">
     <p>Analyses the <b>msg.payload</b> and adds a <b>msg.franc</b> object that contains the identified language <a href="https://en.wikipedia.org/wiki/ISO_639-3" target="_new">ISO 639-3</a> code as <b>msg.franc.iso639_3</b>.</p>
     <p>See <a href="https://github.com/wooorm/franc/blob/master/Readme.md" target="_new">the Franc documentation here</a>.</p>
+	<p>Advanced usage: Pass <b>msg.francoptions</b> to pass the following options to franc:<br/><b>minLength whiteList blackList<b><br/>If <b>msg.francoptions.all</b> is present and set to non zero, then at output <b>msg.franc.all</b> will contain francs list of probabilities (see franc docs), with <b>msg.franc.iso639_3</b> containing the <b>most</b> probable language</p>
 </script>
